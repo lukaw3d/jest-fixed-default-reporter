@@ -1,8 +1,8 @@
 {
   "name": "jest-fixed-default-reporter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Tiny wrapper around jest DefaultReporter that prints success messages to stdout",
-  "main": "FixedDefaultReporter.js",
+  "main": "DefaultReporter.js",
   "scripts": {
     "inner-test1": "jest tests/inner/good.spec.js >tests/results/good_stdout.txt 2>tests/results/good_stderr.txt || true",
     "inner-test2": "jest tests/inner/bad.spec.js >tests/results/bad_stdout.txt 2>tests/results/bad_stderr.txt || true",
@@ -32,6 +32,6 @@
     "jest": "^26.6.3"
   },
   "jest": {
-    "reporters": ["./FixedDefaultReporter.js", "./FixedSummaryReporter.js"]
+    "reporters": ["./DefaultReporter.js", "./SummaryReporter.js"]
   }
 }
