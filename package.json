@@ -7,7 +7,8 @@
     "inner-test1": "jest tests/inner/good.spec.js >tests/results/good_stdout.txt 2>tests/results/good_stderr.txt || true",
     "inner-test2": "jest tests/inner/bad.spec.js >tests/results/bad_stdout.txt 2>tests/results/bad_stderr.txt || true",
     "inner-test3": "jest tests/inner/mixed.spec.js >tests/results/mixed_stdout.txt 2>tests/results/mixed_stderr.txt || true",
-    "inner-test": "npm run inner-test1 && npm run inner-test2 && npm run inner-test3"
+    "inner-test": "npm run inner-test1 && npm run inner-test2 && npm run inner-test3",
+    "test": "npm run inner-test && jest tests/check-results.spec.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,6 @@
     "jest": "^26.6.3"
   },
   "jest": {
-    "verbose": false
+    "reporters": ["./FixedDefaultReporter.js", "./FixedSummaryReporter.js"]
   }
 }

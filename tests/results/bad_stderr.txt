@@ -36,5 +36,5 @@ FAIL tests/inner/bad.spec.js
 Test Suites: 1 failed, 1 total
 Tests:       2 failed, 2 total
 Snapshots:   0 total
-Time:        0.746 s, estimated 1 s
+Time:        0.766 s, estimated 1 s
 Ran all test suites matching /tests\/inner\/bad.spec.js/i.
