@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "Tiny wrapper around jest DefaultReporter that prints success messages to stdout",
   "main": "FixedDefaultReporter.js",
-  "scripts": {},
+  "scripts": {
+    "inner-test1": "jest tests/inner/good.spec.js >tests/results/good_stdout.txt 2>tests/results/good_stderr.txt || true",
+    "inner-test2": "jest tests/inner/bad.spec.js >tests/results/bad_stdout.txt 2>tests/results/bad_stderr.txt || true",
+    "inner-test3": "jest tests/inner/mixed.spec.js >tests/results/mixed_stdout.txt 2>tests/results/mixed_stderr.txt || true",
+    "inner-test": "npm run inner-test1 && npm run inner-test2 && npm run inner-test3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lukaw3d/jest-fixed-default-reporter.git"
@@ -22,6 +27,10 @@
     "@jest/reporters": "^26.6.2"
   },
   "devDependencies": {
-    "@types/node": "^15.3.0"
+    "@types/node": "^15.3.0",
+    "jest": "^26.6.3"
+  },
+  "jest": {
+    "verbose": false
   }
 }

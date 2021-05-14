@@ -1,0 +1,40 @@
+FAIL tests/inner/bad.spec.js
+  ● bad › one
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "b"
+    Received: "a"
+
+      1 | describe('bad', () => {
+      2 |   test('one', () => {
+    > 3 |     expect('a').toBe('b');
+        |                 ^
+      4 |   });
+      5 |
+      6 |   test('two', () => {
+
+      at Object.<anonymous> (tests/inner/bad.spec.js:3:17)
+
+  ● bad › two
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "b"
+    Received: "a"
+
+       5 |
+       6 |   test('two', () => {
+    >  7 |     expect('a').toBe('b');
+         |                 ^
+       8 |   });
+       9 | });
+      10 |
+
+      at Object.<anonymous> (tests/inner/bad.spec.js:7:17)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 2 total
+Snapshots:   0 total
+Time:        0.746 s, estimated 1 s
+Ran all test suites matching /tests\/inner\/bad.spec.js/i.

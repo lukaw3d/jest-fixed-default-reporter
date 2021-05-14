@@ -1,0 +1,23 @@
+FAIL tests/inner/mixed.spec.js
+  ● mixed › bad
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "b"
+    Received: "a"
+
+       5 |
+       6 |   test('bad', () => {
+    >  7 |     expect('a').toBe('b');
+         |                 ^
+       8 |   });
+       9 | });
+      10 |
+
+      at Object.<anonymous> (tests/inner/mixed.spec.js:7:17)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 passed, 2 total
+Snapshots:   0 total
+Time:        0.788 s, estimated 1 s
+Ran all test suites matching /tests\/inner\/mixed.spec.js/i.
