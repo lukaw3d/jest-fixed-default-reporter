@@ -1,0 +1,27 @@
+{
+  "name": "jest-fixed-default-reporter",
+  "version": "1.0.0",
+  "description": "Tiny wrapper around jest DefaultReporter that prints success messages to stdout",
+  "main": "FixedDefaultReporter.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukaw3d/jest-fixed-default-reporter.git"
+  },
+  "keywords": [
+    "jest",
+    "jest-reporter"
+  ],
+  "author": "lukaw3d",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukaw3d/jest-fixed-default-reporter/issues"
+  },
+  "homepage": "https://github.com/lukaw3d/jest-fixed-default-reporter#readme",
+  "dependencies": {
+    "@jest/reporters": "^26.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^15.3.0"
+  }
+}
