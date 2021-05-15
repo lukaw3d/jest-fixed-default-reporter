@@ -9,7 +9,7 @@ See how [inner tests](./tests/inner/) print [results](./tests/results/).
 ## Use
 ```bash
 npm install --save-dev jest-fixed-default-reporter
-jest --reporters=jest-fixed-default-reporter/DefaultReporter,jest-fixed-default-reporter/SummaryReporter
+jest --reporters=jest-fixed-default-reporter/DefaultReporter --reporters=jest-fixed-default-reporter/SummaryReporter
 ```
 
 or
