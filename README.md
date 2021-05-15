@@ -29,6 +29,34 @@ jest.config.js:
 }
 ```
 
+## Implementation
+
+The essence is:
+```js
+jest --reporters=./Fixed.js
+
+// @file: Fixed.js
+const { DefaultReporter } = require('@jest/reporters');
+class Fixed extends DefaultReporter {
+  // https://github.com/facebook/jest/blob/4453901c0239939cc2c1c8b7c7d121447f6f5f52/packages/jest-reporters/src/DefaultReporter.ts#L28
+  // https://github.com/facebook/jest/blob/4453901c0239939cc2c1c8b7c7d121447f6f5f52/packages/jest-reporters/src/BaseReporter.ts#L21-L23
+  log(message) {
+    process.stdout.write(`${message}\n`);
+  }
+  // https://github.com/facebook/jest/blob/4453901c0239939cc2c1c8b7c7d121447f6f5f52/packages/jest-reporters/src/DefaultReporter.ts#L196-L207
+  printTestFileFailureMessage(...args) {
+    const origLog = this.log;
+    try {
+      this.log = (message) => process.stderr.write(`${message}\n`);
+      return super.printTestFileFailureMessage(...args);
+    } finally {
+      this.log = (message) => process.stdout.write(`${message}\n`);
+    }
+  }
+}
+module.exports = Fixed;
+```
+
 
 ## Inspiration
 `jest-standard-reporter` seemed like way too much code to maintain https://github.com/chrisgalvan/jest-standard-reporter
