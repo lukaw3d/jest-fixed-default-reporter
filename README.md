@@ -1,7 +1,7 @@
 # Fixed jest DefaultReporter
 By default, Jest is using `stderr` as output https://github.com/facebook/jest/issues/5064
 
-This is a tiny wrapper around jest default reporters (DefaultReporter, VerboseReporter, SummaryReporter)
+This is a tiny wrapper around jest default reporters ([DefaultReporter](https://github.com/facebook/jest/blob/master/packages/jest-reporters/src/DefaultReporter.ts), VerboseReporter, SummaryReporter)
 that prints success messages to stdout and errors to stderr.
 
 See how [inner tests](./tests/inner/) print [results](./tests/results/).
